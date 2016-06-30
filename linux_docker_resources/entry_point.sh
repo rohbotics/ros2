@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # This file fixes the permissions of the home directory so that it matches the host user's ID.
 # It also enables multicast and changes directories before executing the input from docker run.
@@ -57,4 +57,4 @@ esac
 
 cd /home/rosbuild/ci_scripts
 
-exec sudo -H -u rosbuild -E -- /bin/bash -c "$*"
+exec sudo -H -u rosbuild -E -- /bin/sh -c "$*"
