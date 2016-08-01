@@ -154,10 +154,10 @@ docker info
 echo "# END SECTION"
 echo "# BEGIN SECTION: Build Dockerfile"
 @[if os_name == 'linux-armhf']@
-sed -i 's+^FROM.*$+FROM osrf/ubuntu_armhf:trusty+' linux_docker_resources/Dockerfile
+sed -i 's+^FROM.*$+FROM osrf/ubuntu_armhf:xenial+' linux_docker_resources/Dockerfile
 docker build --build-arg PLATFORM=arm -t ros2_batch_ci_armhf linux_docker_resources
 @[elif os_name == 'linux-aarch64']@
-sed -i 's+^FROM.*$+FROM osrf/ubuntu_arm64:trusty+' linux_docker_resources/Dockerfile
+sed -i 's+^FROM.*$+FROM osrf/ubuntu_arm64:xenial+' linux_docker_resources/Dockerfile
 docker build --build-arg PLATFORM=arm -t ros2_batch_ci_aarch64 linux_docker_resources
 @[elif os_name == 'linux']@
 docker build -t ros2_batch_ci linux_docker_resources
